@@ -64,6 +64,26 @@ python scripts/download_weights.py
 `torchvision.transforms.functional_tensor` yang masih diimpor basicsr.
 Script mengganti satu baris import agar `import gfpgan` tidak gagal.
 
+## Bobot model
+
+Bobot GFPGAN dan CodeFormer **tidak disertakan** di repository ini karena
+ukurannya melebihi batas GitHub (GFPGANv1.4.pth ~333MB, codeformer.pth ~360MB).
+Unduh otomatis dengan:
+
+```bash
+python scripts/download_weights.py
+```
+
+Script akan mengunduh dan menyimpan ke folder `weights/`:
+
+| File | Sumber | Ukuran |
+|------|--------|--------|
+| GFPGANv1.4.pth | github.com/TencentARC/GFPGAN | ~333 MB |
+| codeformer.pth | github.com/sczhou/CodeFormer | ~360 MB |
+
+Bobot RetinaFace dan BiSeNet (face parsing) diunduh otomatis oleh facexlib
+saat pertama kali dipakai, tidak perlu diunduh manual.
+
 ## Penggunaan
 
 ```python
